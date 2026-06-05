@@ -49,7 +49,6 @@ def upd_employee():
 								print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
 							print("=" * 100)
 							break
-				
 def search_employee():
 	emp_id2=input("enter employee id : ")
 	for i in data:
@@ -75,7 +74,7 @@ def salary_employee():
 				print("\n" + "=" * 100)
 				print(" " * 40 + "EMPLOYEE DETAILS")
 				print("=" * 100)
-				print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")								
+				print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")	
 				print("-" * 100)
 				for employee in data:
 					print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
@@ -88,7 +87,6 @@ for i in range(4):
 	print("2. Update Employee")
 	print("3. Search Employee")
 	print("4. Salary Employee")
-	print("5. Exit")
 	print("=" * 40)	
 	choice = int(input("Enter your choice : "))	
 	while choice:
