@@ -1,22 +1,38 @@
 data=[]
+emp_ids=[]
+emp_numbers=[]
+emp_mails=[]
 def add_employee():
 	n=int(input("no.of employees : "))
 	for i in range(n):
-		emp_id = input("enter employee id : ")
+		emp_id = input("enter employee id : ")	
 		emp_name = input("enter employee name : ")
 		emp_mail = input("enter employee mail : ")
 		emp_number = int(input("enter employee number : "))
 		emp_salary = int(input("enter employee salary : "))
-		employee ={"emp_id":emp_id,"emp_name":emp_name,"emp_mail":emp_mail,"emp_number":emp_number,"emp_salary":emp_salary,"total_salary":emp_salary}
-		data.append(employee)
-		print("\n" + "=" * 100)
-		print(" " * 40 + "EMPLOYEE DETAILS")
-		print("=" * 100)
-		print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")
-		print("-" * 100)
-		for employee in data:
-			print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
-		print("=" * 100)
+		if emp_id in emp_ids :
+				print("employee id is already exists")
+		elif emp_mail in emp_mails:
+				print("employee mail id is already exists")
+		elif emp_number in emp_numbers :
+				print("employee number is already exists")
+		else :
+			employee={"emp_id":emp_id,"emp_name":emp_name,"emp_mail":emp_mail,"emp_number":emp_number,"emp_salary":emp_salary,"total_salary":emp_salary}
+			data.append(employee)
+			for j in data:
+				emp_ids.append(j['emp_id'])
+				emp_mails.append(j['emp_mail'])
+				emp_numbers.append(j['emp_number'])
+				print("data entered is correct")
+				print("\n" + "=" * 100)
+				print(" " * 40 + "EMPLOYEE DETAILS")
+				print("=" * 100)
+				print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")
+				print("-" * 100)
+				for employee in data:
+					print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
+				print("=" * 100)
+
 def upd_employee():
 	m=int(input("no.of employees updation :"))
 	for l in range(m):
