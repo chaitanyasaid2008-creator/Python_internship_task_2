@@ -23,15 +23,14 @@ def add_employee():
 				emp_ids.append(j['emp_id'])
 				emp_mails.append(j['emp_mail'])
 				emp_numbers.append(j['emp_number'])
-				print("data entered is correct")
-				print("\n" + "=" * 100)
-				print(" " * 40 + "EMPLOYEE DETAILS")
-				print("=" * 100)
-				print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")
-				print("-" * 100)
-				for employee in data:
-					print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
-				print("=" * 100)
+			print("\n" + "=" * 100)
+			print(" " * 40 + "EMPLOYEE DETAILS")
+			print("=" * 100)
+			print(f"{'EMP ID':<10} | {'NAME':<15} | {'EMAIL':<25} | {'PHONE':<12} | {'SALARY':<10} | {'TOTAL SALARY':<12}")
+			print("-" * 100)
+			for employee in data:
+				print(f"{employee['emp_id']:<10} | {employee['emp_name']:<15} | {employee['emp_mail']:<25} | {employee['emp_number']:<12} | {employee['emp_salary']:<10} | {employee['total_salary']:<12}")
+			print("=" * 100)
 
 def upd_employee():
 	m=int(input("no.of employees updation :"))
@@ -45,6 +44,7 @@ def upd_employee():
 						b=input("enter a change : ")	
 						if b in ['emp_number','emp_salary']:
 							i[b]=int(input(b+" :"))
+							i['total_salary']=i['emp_salary']
 							print("\n" + "=" * 100)
 							print(" " * 40 + "EMPLOYEE DETAILS")
 							print("=" * 100)
